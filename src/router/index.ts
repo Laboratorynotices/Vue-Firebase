@@ -1,4 +1,10 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  NavigationGuardNext,
+  RouteLocationNormalized,
+  RouteRecordRaw,
+} from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -27,10 +33,16 @@ const router = createRouter({
 /**
  * При помощи JS обновляем мета-заголовок страницы.
  */
-router.beforeEach((to, from, next): void => {
-  document.title =
-    (to.meta.title ? to.meta.title + " -- " : "") + "Vue.js 3 and Firebase";
-  next();
-});
+router.beforeEach(
+  (
+    to: RouteLocationNormalized,
+    from: RouteLocationNormalized,
+    next: NavigationGuardNext
+  ): void => {
+    document.title =
+      (to.meta.title ? to.meta.title + " -- " : "") + "Vue.js 3 and Firebase";
+    next();
+  }
+);
 
 export default router;
