@@ -6,6 +6,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "home",
     component: HomeView,
+    meta: { title: "Home" },
   },
   {
     path: "/about",
@@ -21,6 +22,15 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+/**
+ * При помощи JS обновляем мета-заголовок страницы.
+ */
+router.beforeEach((to, from, next): void => {
+  document.title =
+    (to.meta.title ? to.meta.title + " -- " : "") + "Vue.js 3 and Firebase";
+  next();
 });
 
 export default router;
