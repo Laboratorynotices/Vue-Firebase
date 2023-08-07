@@ -22,5 +22,8 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+# Firebase
+/src/firebase/config.ts
+
 # папка .Trash (удалённые файлы при Samba-сервере)
 /.Trash*
