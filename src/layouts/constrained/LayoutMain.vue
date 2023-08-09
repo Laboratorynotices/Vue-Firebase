@@ -7,7 +7,12 @@ import AppMainLeftCol from "@/layouts/constrained/AppMainLeftCol.vue";
   <v-app id="inspire">
     <v-app-bar flat elevation="4">
       <v-container class="fill-height d-flex align-center">
-        <v-avatar class="me-10 ms-4" color="grey-darken-1" size="32"></v-avatar>
+        <v-avatar
+          v-if="false"
+          class="me-10 ms-4"
+          color="grey-darken-1"
+          size="32"
+        ></v-avatar>
 
         <!-- Навигация. -->
         <app-bar-nav></app-bar-nav>
