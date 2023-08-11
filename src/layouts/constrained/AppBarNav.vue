@@ -21,6 +21,10 @@ const navElements: Array<RouterLink> = [
     to: "/",
   },
   {
+    name: "Группы",
+    to: "/groups",
+  },
+  {
     name: "About",
     to: "/about",
   },

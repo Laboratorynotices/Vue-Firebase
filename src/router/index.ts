@@ -15,6 +15,12 @@ const routes: Array<RouteRecordRaw> = [
     meta: { title: "Home" },
   },
   {
+    path: "/groups",
+    name: "groups-index",
+    component: import("../views/GroupsIndexView.vue"),
+    meta: { title: "Список групп" },
+  },
+  {
     path: "/about",
     name: "about",
     // route level code-splitting
