@@ -35,7 +35,7 @@ import AppMainLeftCol from "@/layouts/constrained/AppMainLeftCol.vue";
           <app-main-left-col></app-main-left-col>
 
           <v-col>
-            <v-sheet min-height="70vh" rounded="lg" elevation="4">
+            <v-sheet min-height="70vh" rounded="lg" elevation="4" class="pa-6">
               <!-- Подключение страниц маршрутизатором из файла App.vue -->
               <router-view />
             </v-sheet>
