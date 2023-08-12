@@ -6,8 +6,8 @@ import { Group } from "@/types";
 // Указатель на хранилище групп
 const groups: Ref = ref<Group[]>([]);
 
-onMounted(async () => {
-  groups.value = await getGroups();
+onMounted(() => {
+  getGroups(groups);
 });
 </script>
 
