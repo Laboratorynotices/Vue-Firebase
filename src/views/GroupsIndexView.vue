@@ -25,6 +25,14 @@ onMounted(() => {
     </v-card-item>
 
     <v-card-text>Текст</v-card-text>
-    <v-card-actions>Действия</v-card-actions>
+    <v-card-actions>
+      <v-btn prepend-icon="mdi-trash-can-outline">
+        <template v-slot:prepend>
+          <v-icon color="error"></v-icon>
+        </template>
+
+        Удалить
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
