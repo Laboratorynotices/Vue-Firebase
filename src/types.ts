@@ -4,7 +4,7 @@
  */
 export interface Group {
   // Уникальное значение документа коллекции в Firebase
-  id: string;
+  id?: string;
   // Отображаемое название
   name: string;
 }
