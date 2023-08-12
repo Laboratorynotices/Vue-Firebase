@@ -2,6 +2,7 @@
 import { Ref, onMounted, ref } from "vue";
 import { getGroups } from "@/firebase/groups";
 import { Group } from "@/types";
+import GroupAddForm from "@/components/GroupAddForm.vue";
 
 // Указатель на хранилище групп
 const groups: Ref = ref<Group[]>([]);
@@ -12,6 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <group-add-form></group-add-form>
   <v-card
     v-for="group in groups"
     :key="group.id"
