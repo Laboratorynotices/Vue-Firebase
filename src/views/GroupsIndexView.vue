@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Ref, onMounted, ref } from "vue";
-import { getGroups } from "@/firebase/groups";
+import { deleteGroup, getGroups } from "@/firebase/groups";
 import { Group } from "@/types";
 import GroupAddForm from "@/components/GroupAddForm.vue";
 
@@ -26,7 +26,10 @@ onMounted(() => {
 
     <v-card-text>Текст</v-card-text>
     <v-card-actions>
-      <v-btn prepend-icon="mdi-trash-can-outline">
+      <v-btn
+        prepend-icon="mdi-trash-can-outline"
+        @click="deleteGroup(group.id)"
+      >
         <template v-slot:prepend>
           <v-icon color="error"></v-icon>
         </template>

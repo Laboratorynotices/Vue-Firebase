@@ -7,6 +7,8 @@ import {
   onSnapshot,
   query,
   DocumentReference,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 import { Ref } from "vue";
 
@@ -54,4 +56,12 @@ export const getGroups = (groups: Ref<Group[]>): void => {
  */
 export const addGroup = async (group: Group): Promise<DocumentReference> => {
   return await addDoc(collection(db, COLLECTION_NAME), group);
+};
+
+/**
+ * Удаляется запись из коллекции Groups
+ * @param id уникальный идентификатор документа
+ */
+export const deleteGroup = async (id: string): Promise<void> => {
+  await deleteDoc(doc(db, COLLECTION_NAME, id));
 };
