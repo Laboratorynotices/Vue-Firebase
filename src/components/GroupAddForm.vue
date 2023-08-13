@@ -65,6 +65,9 @@ const submit = async (event: any): Promise<boolean> => {
   // Сохраняем данные в Firebase
   addGroup({ name: groupName.value } as Group);
 
+  // Очищаем данные формы
+  groupName.value = "";
+
   return true;
 };
 </script>
